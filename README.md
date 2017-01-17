@@ -13,6 +13,8 @@ To use:
 Then:
 `docker-compose up -d`
 
+Wait a moment, as it will take 30 seconds for Docker to install MariaDB and connect the WordPress container to it. 
+
 This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database!
 
 ## Helpful commands:
