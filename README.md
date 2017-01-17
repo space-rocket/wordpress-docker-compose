@@ -15,7 +15,7 @@ Then:
 
 This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database!
 
-Helpfule commands:
+## Helpful commands:
 ### stop all containers:
 `docker kill $(docker ps -q) -f`
 
