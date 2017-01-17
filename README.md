@@ -1,4 +1,4 @@
-# What this does
+# Getting Started:
 No need for VirtualBox or Vagrant!
 
 All that is needed is the Docker [Mac](https://docs.docker.com/docker-for-mac/ "Get Started with Docker for Mac")/[Windows](https://docs.docker.com/docker-for-windows/ "Get Started with Docker for Windows") desktop client.
