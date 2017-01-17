@@ -18,7 +18,9 @@ Wait a moment, as it will take 30 seconds for Docker to install MariaDB and conn
 You can see the status of the WordPress container and know when its ready by typing (replace 'my-project-name' with the current working directory or run `docker ps` to see the name of the container):
 `docker logs my-project-name1_wordpress_1 --follow`
 
-This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database!
+This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database.
+
+Go to [http://localhost:8080](http://localhost:8080/) to see your brand spanking new WordPress site!
 
 ## Helpful commands:
 ### stop all containers:
