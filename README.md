@@ -17,10 +17,10 @@ This will create a `wordpress` directory with a local copy of WordPress and `env
 
 ## Helpful commands:
 ### stop all containers:
-`docker kill $(docker ps -q) -f`
+`docker kill $(docker ps -q)`
 
 ### remove all containers:
-`docker rm $(docker ps -a -q) -f`
+`docker rm $(docker ps -a -q)`
 
 ### remove all docker images:
-`docker rmi $(docker images -q) -f`
+`docker rmi $(docker images -q)`
