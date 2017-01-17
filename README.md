@@ -8,7 +8,7 @@ Installing the desktop client includes [Docker-Compose](https://docs.docker.com/
 ## Let do this!
 
 To use:
-`git clone https://github.com/bigbassroller/wordpress-docker-compose`
+`git clone https://github.com/bigbassroller/wordpress-docker-compose my-project-name && cd my-project-name`
 
 Then:
 `docker-compose up -d`
