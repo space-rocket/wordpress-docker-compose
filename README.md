@@ -14,3 +14,13 @@ Then:
 `docker-compose up -d`
 
 This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database!
+
+Helpfule commands:
+### stop all containers:
+`docker kill $(docker ps -q) -f`
+
+### remove all containers:
+`docker rm $(docker ps -a -q) -f`
+
+### remove all docker images:
+`docker rmi $(docker images -q) -f`
