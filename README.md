@@ -31,3 +31,6 @@ Go to [http://localhost:8080](http://localhost:8080/) to see your brand spanking
 
 ### remove all docker images:
 `docker rmi $(docker images -q)`
+
+### all you can special move:
+`docker kill $(docker ps -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q) && docker-compose up -d && docker logs wordpress -f`
