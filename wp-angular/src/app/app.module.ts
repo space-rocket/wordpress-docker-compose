@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { WPAngularRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    WPAngularRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

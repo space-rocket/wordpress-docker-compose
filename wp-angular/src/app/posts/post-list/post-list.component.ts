@@ -8,9 +8,12 @@ import { PostsService } from '../posts.service';
   styleUrls: ['./post-list.component.css'],
   providers: [PostsService]
 })
+
+
 export class PostListComponent implements OnInit {
 
   posts: Post[];
+
 
   constructor( private postsService: PostsService ) { }
 
