@@ -6,13 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { WPAngularRoutingModule } from './app-routing.module';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent
+    PostListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
