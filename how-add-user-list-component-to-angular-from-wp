@@ -1,0 +1,103 @@
+cd src/app
+mkdir users
+ng g component /users/user-list
+ng g service /posts/posts
+Add to app-routing.module.ts:
+import { UserListComponent } from './users/user-list/user-list.component';
+add to the routes inside app-routing.module.ts:
+  {
+    path: 'users',
+    component: UserListComponent,
+    pathMatch: 'full'
+  }
+ 
+
+Run: 
+touch users/user.ts
+
+inside user.ts:
+export class Post {
+}
+
+Run: 
+ng g service /users/users
+
+open users.service.ts and make it look like this:
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { User } from './user';
+
+
+
+
+
+@Injectable()
+export class UsersService {
+
+	private usersUrl = "localhost/wp-json/wp/v2/";
+
+	constructor(private http: Http) { }
+
+	getUsers(): Observable<User[]> {
+
+		return this.http
+		.get(this.usersUrl + 'users')
+		.map((res: Response) => res.json());
+
+	}
+
+}
+
+Add to user-list.ts:
+import { User } from '../user';
+import { UsersService } from '../users.service';
+  providers: [UsersService]
+
+  users: User[];
+
+and to the export class:
+
+
+  constructor( private usersService: UsersService ) { }
+
+  getUsers(){
+    this.usersService
+      .getUsers()
+      .subscribe(res => {
+        this.users = res;
+      });
+  }
+
+  ngOnInit() {
+    this.getUsers();
+  }
+
+
+// Authentication
+users.service.ts:
+Add below the contructor. 
+
+  createAuthorizationHeader(headers: Headers) {
+    headers.append('Authorization', 'Basic ' +
+      btoa('localhost:localhost')); 
+  }
+
+ Then modify the getUsers to look like this:
+  getUsers(): Observable<User[]> {
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+
+    return this.http.get(this.usersUrl + 'users', {
+        headers: headers
+      })
+    .map((res: Response) => res.json());
+
+  } 
+
+
+
+
+
+
