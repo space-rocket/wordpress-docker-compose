@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
 
 
 const routes: Routes = [
@@ -19,6 +19,11 @@ const routes: Routes = [
   {
     path: 'users',
     component: UserListComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'todos',
+    component: TodoListComponent,
     pathMatch: 'full'
   }
 ];

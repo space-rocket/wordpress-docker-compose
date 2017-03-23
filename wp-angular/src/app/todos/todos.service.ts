@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers,  RequestOptions } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { User } from './user';
-import 'rxjs/add/operator/toPromise';
-
-
+import { Todo } from './todo';
 
 
 
 @Injectable()
-export class UsersService {
+export class TodosService {
 
-	private usersUrl = "http://localhost/wp-json/wp/v2/";
+	private todosUrl = "http://localhost/wp-json/wp/v2/";
 
 	constructor(private http: Http) { }
 
@@ -21,26 +18,27 @@ export class UsersService {
 			btoa('localhost:localhost')); 
 	}
 
-	getUsers(): Observable<User[]> {
+	getTodos(): Observable<Todo[]> {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
 
-		return this.http.get(this.usersUrl + 'users', {
-	      headers: headers
-	    })
+		return this.http.get(this.todosUrl + 'todos', {
+			headers: headers
+		})
 		.map((res: Response) => res.json());
-	}  
 
-    create(name: string): Promise<User> {
+	}
+
+    create(title: string): Promise<Todo> {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
 
 	    return this.http
-	        .post(this.usersUrl + 'users', JSON.stringify({name: name}), {headers: headers})
+	        .post(this.todosUrl + 'todos', JSON.stringify({title: title}), {headers: headers})
 	        .toPromise()
-	        .then(res => res.json().data)
+	        .then(res => res.json())
 	        .catch(this.handleError);
-    }
+    } 
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only

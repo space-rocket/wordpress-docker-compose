@@ -1,6 +1,15 @@
-<h1>Users</h1>
-<ul>
-  <li *ngFor="let user of users">
-    {{ user.name }}
-  </li>
-</ul>
+<div class="container">
+	<div class="row">
+		<h1>Users</h1>	
+	</div>
+	<div class="row">
+		<ul class="list-unstyled">
+		  <li *ngFor="let user of users">
+			<figure class="figure">
+			  <img src="{{ user.avatar_urls[96]}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+			  <figcaption class="figure-caption text-center">{{ user.name }}</figcaption>
+			</figure>
+		  </li>
+		</ul>
+	</div>
+</div>

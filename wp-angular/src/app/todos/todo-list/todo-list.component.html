@@ -1,0 +1,13 @@
+<h1>Todos</h1>
+<div>
+  <label>Todo title:</label> 
+  <input #todoTitle />
+  <button (click)="add(todoTitle.value); todoTitle.value='Hey'">
+    Add
+  </button>
+</div>
+<ul>
+  <li *ngFor="let todo of todos">
+    {{ todo.title.rendered }}
+  </li>
+</ul>

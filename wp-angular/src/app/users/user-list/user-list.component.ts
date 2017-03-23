@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UsersService } from '../users.service';
+import { EmitterService } from '../../emitter.service';
 
 
 @Component({
@@ -22,6 +23,16 @@ export class UserListComponent implements OnInit {
         this.users = res;
       });
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.usersService.create(name)
+      .then(user => {
+        this.users.push(user);
+      });
+  }
+
 
   ngOnInit() {
     this.getUsers();

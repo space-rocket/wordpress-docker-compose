@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { WPAngularRoutingModule } from './app-routing.module';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
 
 
 
@@ -14,7 +15,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
   declarations: [
     AppComponent,
     PostListComponent,
-    UserListComponent
+    UserListComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
