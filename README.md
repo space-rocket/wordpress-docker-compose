@@ -20,7 +20,7 @@ You can see the status of the WordPress container and know when its ready by typ
 
 This will create a `wordpress` directory with a local copy of WordPress and `env` folder for the MariaDB. Now you will have a local hard copy of your WordPress files and database.
 
-Go to [http://localhost:8080](http://localhost) to see your brand spanking new WordPress site!
+Go to [http://localhost:80](http://localhost) to see your brand spanking new WordPress site!
 
 ## Helpful commands:
 ### stop all containers:
